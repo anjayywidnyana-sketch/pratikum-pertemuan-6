@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+
+    <h1>Daftar Produk</h1>
+
+    <a href="/produk/tambah">+ Tambah Produk</a>
+
+    <br><br>
+
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Produk</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th>Stok</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% produk.forEach(item => { %>
+                <tr>
+                    <td>
+    <a href="/produk/edit/<%= item.id %>">Edit</a>
+
+    <form action="/produk/hapus/<%= item.id %>" 
+          method="POST" 
+          style="display: inline;"
+          onsubmit="return confirm('Yakin ingin menghapus produk ini?');">
+        <button type="submit">Hapus</button>
+    </form>
+</td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+</body>
+</html>

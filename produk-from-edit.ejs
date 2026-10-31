@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Produk</title>
+</head>
+<body>
+
+    <h1>Edit Produk</h1>
+
+    <form action="/produk/edit/<%= produk.id %>" method="POST">
+
+        <label>Nama Produk:</label><br>
+        <input type="text" name="nama_produk"
+               value="<%= produk.nama_produk %>" required>
+        <br><br>
+
+        <label>Kategori:</label><br>
+        <input type="text" name="kategori"
+               value="<%= produk.kategori %>" required>
+        <br><br>
+
+        <label>Harga:</label><br>
+        <input type="number" name="harga"
+               value="<%= produk.harga %>" required>
+        <br><br>
+
+        <label>Stok:</label><br>
+        <input type="number" name="stok"
+               value="<%= produk.stok %>" required>
+        <br><br>
+
+        <button type="submit">Update Produk</button>
+        <a href="/produk">Kembali</a>
+
+    </form>
+
+</body>
+</html>
